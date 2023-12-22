@@ -19,10 +19,11 @@ public class CategorieRESTController {
     @GetMapping
     public List<Categorie> getAllCategories()
     {
+
         return categorieRepository.findAll();
     }
 
-    @RequestMapping(value="/{id}",method = RequestMethod.GET)
+    @GetMapping("/{id}")
     public Categorie getCategorieById(@PathVariable("id") Long id) {
         return categorieRepository.findById(id).get();
     }
